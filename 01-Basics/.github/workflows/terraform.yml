@@ -32,6 +32,6 @@ jobs:
         run: terraform validate
         working-directory: ./01-Basics
 
-      - name:                                     Terraform Plan
+      - name: Terraform Plan
         run: terraform plan
-        working-directory:                                                ./01-Basics
+        working-directory: ./01-Basics
