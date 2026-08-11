@@ -1,0 +1,1 @@
+message = "Hello Amarnath, Terraform Practice Started!"
