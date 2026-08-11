@@ -1,0 +1,30 @@
+name: Terraform CI Pipeline
+
+on: [push]
+
+jobs:
+  terraform:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+
+      - name: Setup Terraform
+        uses: hashicorp/setup-terraform@v3
+
+      - name: Terraform Init
+        run: terraform init
+        working-directory: ./01-Basics
+
+      - name: Terraform Format
+        run: terraform fmt -check
+        working-directory: ./01-Basics
+
+      - name: Terraform Validate
+        run: terraform validate
+        working-directory: ./01-Basics
+
+      - name: Terraform Plan
+        run: terraform plan
+        working-directory: ./01-Basics
